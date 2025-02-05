@@ -1,0 +1,159 @@
+body {
+	background-color: #28a297;
+	text-decoration: none;
+	font-family: roboto, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	color: white;
+	margin-bottom: -5px;
+	margin-top: 5px;
+}
+
+#main-hr {
+	border: 1px solid white;
+}
+
+header, footer {
+	width: 100%;
+	background-color: #0C1445;
+	color: white;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: relative;
+	z-index: 500;
+	margin-top: 0;
+}
+
+button {
+	background-color: #0C1445;
+	margin-left: 10px;
+	border-radius: 10px;
+	border-color: #0C1445;
+	padding: 10px;
+	width: 90px;
+	text-align: center;
+}
+
+button a {
+	color: white;
+
+}
+
+hr {
+	border: 1px solid #a8a8a8;
+}
+
+.navbar {
+	overflow: auto;
+	margin: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	vertical-align: top;
+	position: relative;
+	background-color: #636363;
+	text-align: center;
+}
+
+nav ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 0 15px;
+	text-transform: uppercase;
+}
+
+.logo {
+	height: auto;
+	cursor: pointer;
+}
+
+.full-logo {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.slogan {
+	text-align: center;
+	font-style: italic;
+}
+
+.mini-about {
+	border: white solid;
+	background-color: white;
+	width: 600px;
+	height: 270px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 10px 20px 10px 20px;
+}
+
+.mini-about h3 {
+	text-align: center;
+}
+
+.mini-about p {
+	background-color: #f6f6f6;
+}
+
+.map {
+	width: 500px;
+	height: 260px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 3px 20px 15px 20px;
+	float: right;
+	background-color: white;
+	border: white solid;
+}
+
+.google-map {
+	padding-bottom: 50%;
+	position: relative;
+}
+
+.google-map h3 {
+	text-align: center;
+}
+
+.google-map iframe {
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	display: inline-block;
+}
+
+.mini-contact {
+	background-color: white;
+	border: white solid;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 10px 20px 10px 20px;
+}
+
+.mini-contact h3 {
+	text-align: center;
+}
+
+.mini-contact p {
+	background-color: #f6f6f6;
+}
+
+footer {
+	text-align: center;
+	font-size: 14px;
+	padding: 20px 0;
+}
