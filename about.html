@@ -1,98 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- Specifies the character encoding for the document -->
     <meta charset="utf-8">
-    <!-- Ensures proper rendering and responsiveness on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Links the external CSS file for styling -->
     <link rel="stylesheet" type="text/css" href="home-page.css">
-    <!-- Sets the title of the webpage that appears in the browser tab -->
     <title>About Us - Fadak Auto Sales</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 200px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .navdiv ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navdiv ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .navdiv ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navdiv ul li a:hover {
+            color: #f39c12; /* Gold hover effect */
+        }
+
+        /* About Us Section */
+        .about-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #222;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header section containing the company logo -->
+    <!-- Header -->
     <header>
         <a class="logo" href="index.html">
-            <!-- Company logo with a height of 100px and aligned to the left -->
-            <img height="100px" align="left" src="fadak-logo-cut.jpg" alt="Fadak Auto Sales Logo">
+            <img src="fadak-logo-cut.jpg" alt="Fadak Auto Sales Logo">
         </a>
     </header>
 
-    <!-- Navigation bar section -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="navdiv">
             <ul>
-                <!-- Navigation links to different pages of the website -->
-                <li><a href="home-page.html">Home</a></li>
-                <li><a href="Inventory.html">Car Inventory</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Car Inventory</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="Contact Us Page.HTML">Contact</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main heading for the About Us page -->
-    <h2>About Us</h2>
-    
-    <!-- Paragraph describing the company's history and background -->
-    <p>
-        <!-- Family business origins in Riyadh, Saudi Arabia -->
-        The Mugabel family owned a modest used car lot in Riyadh, Saudi Arabia, dealing primarily in reliable and affordable vehicles.
-        <br> Over the years, their business managed to carve out a niche in a market that appreciated value and practicality.
-        
-        <!-- Transition to expanding into the U.S. market -->
-        <br> However, as the automotive market evolved and competition increased, the family recognized a need to diversify their business.
-        <br> In 2021, Ibraheem Mugabel, the eldest son, relocated to the U.S. with an idea: to establish a similar used car dealership in
-        <br> Seattle, focusing on affordable imported cars and providing value to budget-conscious consumers. His father, Hashem, provided 
-        <br>financial backing, while his younger brother, AlBaraa, continued to manage the family's original lot in Riyadh.
-        
-        <!-- Challenges faced in setting up a business in the U.S. -->
-        <br> Starting a business in the U.S. posed significant challenges for Ibraheem. He encountered strict regulations, licensing
-        <br> requirements, and a completely different market landscape. Initially, he took a job at a local dealership in Seattle to
-        <br> learn about the American automotive market. After gaining two years of experience, he opened "Fadak Auto", a dealership
-        <br> that specialized in offering a mix of used imported and domestic vehicles that appealed to a wide range of buyers in Seattle.
-        
-        <!-- Success and adaptation of the business in both locations -->
-        <br> Word of the dealership's value-driven approach spread, attracting a diverse clientele including immigrants, students, and
-        <br> local residents looking for good deals. Back in Riyadh, Albaraa adapted the family business to better utilize digital platforms,
-        <br> expanding their visibility and customer base throughout the region.
-        
-        <!-- Conclusion on the family's success and adaptability -->
-        <br> Despite the physical distance, the Mugabel brothers maintained the entrepreneurial spirit of their family. Their dealerships
-        <br> in Riyadh and Seattle exemplified their ability to adapt and thrive in different markets through a shared commitment to their
-        <br> community and customers.
-    </p>
+    <!-- About Us Content -->
+    <section class="about-container">
+        <h2>About Us</h2>
+        <p class="about-text">
+            The Mugabel family owned a modest used car lot in Riyadh, Saudi Arabia, dealing primarily in reliable and affordable vehicles.
+            Over the years, their business carved out a niche in a market that appreciated value and practicality.
+            <br><br>
+            In 2021, Ibraheem Mugabel, the eldest son, relocated to the U.S. with an idea: to establish a similar used car dealership in
+            Seattle, focusing on affordable imported cars and providing value to budget-conscious consumers. His father, Hashem, provided 
+            financial backing, while his younger brother, AlBaraa, continued to manage the family's original lot in Riyadh.
+            <br><br>
+            After gaining two years of experience in Seattle, Ibraheem opened **Fadak Auto**, a dealership specializing in affordable, high-quality vehicles.
+            Meanwhile, Albaraa expanded the family business online, reaching customers across the region.
+            <br><br>
+            Despite the physical distance, the Mugabel brothers upheld their family's entrepreneurial spirit, growing Fadak Auto into a trusted name in both the U.S. and Saudi Arabia.
+        </p>
+    </section>
 
-    <!-- Extra line breaks to push the footer lower on the page -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    <!-- Footer section with copyright information -->
-    <footer id="footer">
-        <p>&copy;2025 Fadak Auto Sales</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Fadak Auto Sales</p>
     </footer>
 </body>
 </html>
