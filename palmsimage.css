@@ -1,0 +1,7 @@
+body {
+    background-image: url('30fb66dd-040b-4781-9270-ab097a94a017.JPG'); /* Ensure the file is in the same directory */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
