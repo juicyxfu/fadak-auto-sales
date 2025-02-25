@@ -1,0 +1,22 @@
+/* Set background-color, width, and font-color of header and footer. */
+header, footer {
+	width: 100%;
+	background-color: #0C1445;
+	color: white;
+}
+/* Format the header's position and display. */
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: relative;
+	z-index: 500;
+	margin-top: 0;
+}
+
+/* Formats the logo featured in the header. */
+.logo {
+	height: auto;
+	cursor: pointer;
+}
+
