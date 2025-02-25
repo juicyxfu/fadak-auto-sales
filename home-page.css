@@ -5,23 +5,6 @@ Group 12, Byte Brigade
 */
 
 
-/* Set background-color, width, and font-color of header and footer. */
-header, footer {
-	width: 100%;
-	background-color: #0C1445;
-	color: white;
-}
-
-/* Format the header's position and display. */
-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	position: relative;
-	z-index: 500;
-	margin-top: 0;
-}
-
 /* Formats the logo featured in the header. */
 .logo {
 	height: auto;
@@ -43,36 +26,6 @@ h2 {
 	margin-bottom: -5px;
 	margin-top: 5px;
 }
-
-/* Navigation bar, featuring the 'Home', 'Car Inventory', 'About', and 'Contact' headings.
-	Features clickable links that navigate between each page. */
-.navbar {
-	overflow: auto;
-	margin: auto;
-	padding-right: 15px;
-	padding-left: 15px;
-	vertical-align: top;
-	position: relative;
-	background-color: #636363;
-	text-align: center;
-}
-
-/* Order the items into a single vertical line */
-nav ul li {
-	list-style: none;
-	display: inline-block;
-}
-
-/* Formats the text within the navigation bar. */
-nav ul li a {
-	text-decoration: none;
-	color: white;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 0 15px;
-	text-transform: uppercase;
-}
-
 
 /* Catchy slogan at the head of website. */
 .slogan {
@@ -237,11 +190,4 @@ hr {
 .full-logo {
 	max-width: 100%;
 	max-height: 100%;
-}
-
-/* Formats the size, color, and font-size of the footer. */
-footer {
-	text-align: center;
-	font-size: 14px;
-	padding: 20px 0;
 }
