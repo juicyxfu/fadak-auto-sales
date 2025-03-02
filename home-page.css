@@ -60,6 +60,10 @@ button a {
 	text-transform: uppercase;
 }
 
+button a:hover {
+	color: #636363;
+}
+
 /* Formats the horizontal line for the flex-boxes underneath the main heading. */
 hr {
 	border: 1px solid #a8a8a8;

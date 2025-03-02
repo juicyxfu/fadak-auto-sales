@@ -55,3 +55,7 @@ nav ul li a {
 	padding: 0 15px;
 	text-transform: uppercase;
 }
+
+nav ul li a:hover {
+	color: black;
+}
