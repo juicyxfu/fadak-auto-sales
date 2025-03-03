@@ -1,107 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Fadak Auto Sales</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="home-page.css">
+    <link rel="stylesheet" type="text/css" href="palmsimage.css">
+    <link rel="stylesheet" type="text/css" href="header-footer-navbar.css">
+    <title>Fadak Auto Sales Main Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 80%;
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 0 auto;
-        }
-        header {
-            background-color: #800000;
             color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        form {
-            background-color: #f4f4f4;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
             padding: 10px;
-            margin-top: 5px;
+            width: 80%;
+            max-width: 500px;
+        }
+        .inputForm {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .inputForm label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .inputForm input, .inputForm select, .inputForm textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
         }
         input[type="submit"] {
-            background-color: #800000;
+            background-color: #0C1445;
             color: white;
-            border: none;
             padding: 10px 20px;
+            border: none;
             cursor: pointer;
+            margin-top: 10px;
         }
         input[type="submit"]:hover {
-            background-color: #600000;
+            background-color: #0C1445f0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Fadak Auto Sales</h1>
+        <a class="logo" href="#">
+            <img height="100px" align="left" src="fadak-logo-cut.jpg" alt="Fadak Auto Sales Logo">
+        </a>
     </header>
+    <nav class="navbar">
+        <div class="navdiv">
+            <ul>
+                <li><a href="home-page.html">Home</a></li>
+                <li><a href="Inventory.html">Car Inventory</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Contact Us Page.HTML">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h2 class="slogan">Drive off into an oasis with your dream car!</h2>
+
+    <hr id="main-hr">
     <div class="container">
-        <form action="contact.php" method="POST">
-            <label for="requestType">Contact Request</label>
-            <select id="requestType" name="requestType">
-                <option value="General Inquiry">General Inquiry</option>
-                <option value="Purchase Inquiry">Purchase Inquiry</option>
-            </select>
-
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" required>
-
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" required>
-
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Phone #</label>
-            <input type="text" id="phone" name="phone">
-
-            <label for="comments">Comments</label>
-            <textarea id="comments" name="comments" rows="4"></textarea>
-
+        <form action="https://formsubmit.co/autosalesfadak@gmail.com" method="POST">
+            <div class="inputForm">
+                <label for="requestType">Contact Request</label>
+                <select id="requestType" name="requestType">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Purchase Inquiry">Purchase Inquiry</option>
+                </select>
+            </div>
+            <div class="inputForm">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="inputForm">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="inputForm">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="inputForm">
+                <label for="phone">Phone #</label>
+                <input type="text" id="phone" name="phone">
+            </div> 
+            <div class="inputForm">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
             <input type="submit" value="Send">
         </form>
     </div>
+
+    <footer>
+        <p>Designed by:</p>
+        <ul>
+            <li>Home: Alexandria D'Oro-Gilbert.</li>
+            <li>Car Inventory: Mahamed Ali.</li>
+            <li>About: Ariana Herrera.</li>
+            <li>Contact: Ibraheem Mugabel.</li>
+        </ul>
+        <p>&copy;2025 Fadak Auto Sales.</p>
+    </footer>
 </body>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $requestType = $_POST['requestType'];
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $comments = $_POST['comments'];
-
-    $to = 'Autosalesfadak@gmail.com';
-    $subject = "New Contact Request from $firstName $lastName";
-    $body = "You have received a new message from the contact form on your website.\n\n".
-            "Request Type: $requestType\n".
-            "Name: $firstName $lastName\n".
-            "Email: $email\n".
-            "Phone: $phone\n".
-            "Comments: $comments";
-
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Message sent successfully!');</script>";
-    } else {
-        echo "<script>alert('Failed to send the message.');</script>";
-    }
-}
-?>
 </html>
