@@ -1,0 +1,197 @@
+/* 
+Alexandria D'Oro-Gilbert
+T INFO 230
+Group 12, Byte Brigade
+*/
+
+
+/* Formats the logo featured in the header. */
+.logo {
+	height: auto;
+	cursor: pointer;
+}
+
+/* General formatting of the entire body page. */
+body {
+	background-color: #28a297;
+	text-decoration: none;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* General formating of all heading2 styles. */
+h2 {
+	color: white;
+	margin-bottom: -5px;
+	margin-top: 5px;
+}
+
+/* Catchy slogan at the head of website. */
+.slogan {
+	text-align: center;
+	font-style: italic;
+}
+
+
+/* Formats the horizontal line under the slogan. */
+#main-hr {
+	border: 1px solid white;
+}
+
+/* Formats the style of all the buttons on the webpage. */
+button {
+	background-color: #0C1445;
+	margin-left: 10px;
+	border-radius: 10px;
+	border-color: #0C1445;
+	padding: 10px;
+	width: 120px;
+	text-align: center;
+	margin-bottom: 10px;
+	float: right;
+}
+
+/* Formats the font-color, font-weight, and text-transformation of all buttons. */
+button a {
+	color: white;
+	text-decoration: none;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+button a:hover {
+	color: #636363;
+}
+
+/* Formats the horizontal line for the flex-boxes underneath the main heading. */
+hr {
+	border: 1px solid #a8a8a8;
+}
+
+/* Creates a flex container for 2-columns */
+.row1 {
+	display: flex;
+}
+
+/* Formats the size, space, and color of both columns. */
+.column {
+	flex: 1;
+	padding: 0;
+	border: white solid 1px;
+	background-color: white;
+	margin: 10px 1% 10px 1%;
+}
+
+@media (min-width:768px) {
+	.row1 > * {
+		width: 50%;
+	}
+}
+
+/* Formats the border styles, background-color, and sizing of the about section. */
+.mini-about {
+	border: white solid;
+	background-color: white;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 10px 20px 10px 20px;
+}
+
+/* Formats the heading of the about section to be centers and uppercase. */
+.mini-about h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Set the background-color, font-size, font-color, adjusts line height, and centers text of the
+	paragraph in the about section. */
+.mini-about p {
+	font-size: 17px;
+	background-color: #f6f6f6;
+	line-height: 1.5;
+	text-align: center;
+}
+
+/* Sets the sizing, border style, and background-color for the map class. */
+.map {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0px 20px 0px 20px;
+	background-color: white;
+	border: white solid;
+}
+
+/* Positions the column to relative. */
+.google-map {
+	position: relative;
+}
+
+/* Formats the heading to be centered and uppercase. */
+.google-map h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Formats the location finder to a max height and width within the column. */
+.google-map iframe {
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	display: inline-block;
+}
+
+/* Formats the size, background-color, and border type of the contact box. */
+.mini-contact {
+	background-color: white;
+	border: white solid;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 20px 5% 20px 5%;
+}
+
+/* Aligns heading to middle and makes it uppercase. */
+.mini-contact h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Changes font-size, line-height, and aligns text to the center. */
+.mini-contact p {
+	font-size: 17px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+/* Creates a flex container with 2-columns that sit side by side. */
+.row2 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Sets image in the middle of the column. */
+.logo-no-bg {
+	flex: 1;
+	justify-content: center;
+	margin: -10px 0px 0px 25px;
+}
+
+/* Apply flex labeling to contact paragraph and sets items in the center. */
+.contact-para {
+	flex: 1;
+	justify-content: center;
+}
+
+/* Formats the contact paragraph spacing and background-color. */
+.contact-para p {
+	margin: 30px 0px 10px 0px;
+	padding: 10px 0px 10px 0px;
+	background-color: #f6f6f6;
+}
+
+/* Formats the logo to take up width of page at the bottom. */
+.full-logo {
+	max-width: 100%;
+	max-height: 100%;
+}
