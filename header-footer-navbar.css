@@ -59,3 +59,12 @@ nav ul li a {
 nav ul li a:hover {
 	color: black;
 }
+
+.linkedin {
+	text-decoration: none;
+	color: #545a7c;
+}
+
+.linkedin:hover {
+	color: white;
+}
