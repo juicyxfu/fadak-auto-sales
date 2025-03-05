@@ -11,14 +11,53 @@
         <style>
             /* General styling for the page */
             body {
-                background-image: url('palmsbackground.JPG'); /* Sets backgroud image */
-                font-family: 'Helvetica', 'Arial', sans-serif; /* Sets font */
+                background-image: url('palmsbackground.JPG'); /* Sets background image */
+                font-family: 'Helvetica', 'Arial', sans-serif; /* Restores original font */
                 margin: 0;
                 padding: 0;
-                color: #000000; /* Sets text color */
+                color: #000000; /* Restores original text color */
                 display: flex;
                 flex-direction: column;
-                min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+                min-height: 100vh; /* Ensures full viewport height */
+            }
+
+            /* Ensure navbar stays full width */
+            .navbar {
+                width: 100%;
+            }
+
+            /* Main content area should take up available space */
+            .content {
+                flex: 1; /* Pushes footer down */
+            }
+
+            /* About Us section styling */
+            .about-section {
+                text-align: center; /* Center text */
+                margin: 30px auto;
+                width: 80%; /* Restricts width */
+                max-width: 800px; /* Sets max width */
+            }
+
+            .about-title {
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .about-content {
+                background: rgba(255, 255, 255, 0.9); /* White semi-transparent background */
+                padding: 20px;
+                border-radius: 15px; /* Rounded corners */
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+                line-height: 1.6;
+            }
+
+            /* Footer stays at the bottom */
+            footer {
+                margin-top: auto; /* Pushes footer to the bottom */
+                text-align: center;
+                padding: 15px 0;
             }
         </style>
     </head>
@@ -31,8 +70,8 @@
 		</a>
 	</header>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
+    <!-- Navigation Bar (Full Width Restored) -->
+    <nav class="navbar" style="width: 100%;">
         <div class="navdiv">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -43,19 +82,24 @@
         </div>
     </nav>
 
-    <!-- About Us Section -->
-    <h2>About Us</h2>
-    <p>
-         <!-- Company Background Information -->
-        The Mugabel family owned a modest used car lot in Riyadh, Saudi Arabia, dealing primarily in reliable and affordable vehicles.
-        Over the years, their business managed to carve out a niche in a market that appreciated value and practicality.
-        However, as the automotive market evolved and competition increased, the family recognized a need to diversify their business.
-        In 2021, Ibraheem Mugabel, the eldest son, relocated to the U.S. with an idea: to establish a similar used car dealership in
-        Seattle, focusing on affordable imported cars and providing value to budget-conscious consumers. His father, Hashem, provided 
-        financial backing, while his younger brother, AlBaraa, continued to manage the family's original lot in Riyadh.
-    </p>
+    <!-- Main content area to push footer down -->
+    <div class="content">
+        <!-- About Us Section -->
+        <div class="about-section">
+            <h2 class="about-title">About Us</h2>
+            <p class="about-content">
+                <!-- Company Background Information -->
+                The Mugabel family owned a modest used car lot in Riyadh, Saudi Arabia, dealing primarily in reliable and affordable vehicles.
+                Over the years, their business managed to carve out a niche in a market that appreciated value and practicality.
+                However, as the automotive market evolved and competition increased, the family recognized a need to diversify their business.
+                In 2021, Ibraheem Mugabel, the eldest son, relocated to the U.S. with an idea: to establish a similar used car dealership in
+                Seattle, focusing on affordable imported cars and providing value to budget-conscious consumers. His father, Hashem, provided 
+                financial backing, while his younger brother, AlBaraa, continued to manage the family's original lot in Riyadh.
+            </p>
+        </div>
+    </div>
 
-    <!-- Footer Section -->
+    <!-- Footer Section (Exactly as Before) -->
     <footer>
         <p>Designed by:</p>
             <ul>
