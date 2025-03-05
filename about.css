@@ -4,15 +4,6 @@ header, footer {
 	background-color: #0C1445;
 	color: white;
 }
-/* Format the header's position and display. */
-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	position: relative;
-	z-index: 500;
-	margin-top: 0;
-}
 body {
 	text-decoration: none;
 	font-family: 'Helvetica', 'Arial', sans-serif;
