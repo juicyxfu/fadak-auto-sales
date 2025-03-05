@@ -132,18 +132,27 @@
             padding: 5px;
         }
         footer {
-            background-color: #12255f;
+            background-color: #0C1445;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             margin-top: auto; /* Push the footer to the bottom */
         }
-        footer a {
-            color: white;
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        footer ul li {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        footer ul li a {
+            color: #545a7c;
             text-decoration: none;
         }
-        footer a:hover {
-            text-decoration: underline;
+        footer ul li a:hover {
+            color: white;
         }
     </style>
     <script>
@@ -172,20 +181,20 @@
 </head>
 <body>
     <header>
-	<a class="logo" href="#">
-		<img height="100px" align="left" src="fadak-logo-cut.jpg" alt="Fadak Auto Sales Logo">
-	</a>
+        <a class="logo" href="#">
+            <img height="100px" align="left" src="fadak-logo-cut.jpg" alt="Fadak Auto Sales Logo">
+        </a>
     </header>
-	<nav class="navbar">
-		<div class="navdiv">
-			<ul>
-				<li><a href="#">HOME</a></li>
-				<li><a href="Inventory.html">CAR INVENTORY</a></li>
-				<li><a href="about.html">ABOUT</a></li>
-				<li><a href="Contact Us Page.HTML">CONTACT</a></li>
-			</ul>
-		</div>
-	</nav>
+    <nav class="navbar">
+        <div class="navdiv">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Inventory.html">Car Inventory</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Contact Us Page.HTML">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <aside class="filter-section">
             <h2>Filter Inventory</h2>
@@ -224,12 +233,12 @@
     </div>
     <footer>
         <p>Designed by:</p>
-            <ul>
-                <li><a class="linkedin" href="https://www.linkedin.com/in/alexandria-d-oro-gilbert-b10b4a1ab/">Home: Alexandria D'Oro-Gilbert.</a></li>
-                <li><a class="linkedin" href="">Car Inventory: Mahamed Ali.</a></li>
-                <li><a class="linkedin" href="https://www.linkedin.com/in/ariana-h-0732312a2/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">About: Ariana Herrera.</a></li>
-                <li><a class="linkedin" href="">Contact: Ibraheem Mugabel.</a></li>
-            </ul>
+        <ul>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/alexandria-d-oro-gilbert-b10b4a1ab/">Home: Alexandria D'Oro-Gilbert.</a></li>
+            <li><a class="linkedin" href="">Car Inventory: Mahamed Ali.</a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/ariana-h-0732312a2/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">About: Ariana Herrera.</a></li>
+            <li><a class="linkedin" href="">Contact: Ibraheem Mugabel.</a></li>
+        </ul>
         <p>&copy;2025 Fadak Auto Sales.</p>
     </footer>
 </body>
