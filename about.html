@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+        <!-- Linking external CSS files for styling -->
         <link rel="stylesheet" type="text/css" href="palmsimage.css">
         <link rel="stylesheet" type="text/css" href="header-footer-navbar.css">
         <title>Fadak Auto Sales - Inventory</title>
         <style>
+            /* General styling for the page */
             body {
                 background-image: url('palmsbackground.JPG');
                 font-family: 'Helvetica', 'Arial', sans-serif;
@@ -16,77 +19,6 @@
                 display: flex;
                 flex-direction: column;
                 min-height: 100vh; /* Ensure the body takes at least the full viewport height */
-            }
-            .top-bar {
-                background-color: #12255f;
-                color: white;
-                padding: 10px;
-                text-align: center;
-                font-size: 14px;
-            }
-            .container {
-                display: flex;
-                padding: 20px;
-                justify-content: space-between;
-                flex: 1; /* Allow the container to grow and take up remaining space */
-            }
-            .filter-section, .inventory-list {
-                background: white;
-                padding: 15px;
-                border-radius: 10px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            .filter-section {
-                width: 20%;
-            }
-            .inventory-list {
-                width: 75%; /* Adjusted to take up more space after removing add-car-section */
-            }
-            .car-card {
-                background: white;
-                padding: 15px;
-                margin-bottom: 20px;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                border: 1px solid #ddd;
-            }
-            .car-card img {
-                width: 150px;
-                height: auto;
-                border-radius: 10px;
-                margin-right: 15px;
-            }
-            .car-info {
-                flex: 1;
-            }
-            .button {
-                background-color: #12255f;
-                color: white;
-                padding: 10px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                width: 100%;
-                text-align: center;
-            }
-            .search-bar {
-                display: flex;
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-            .filter-options label {
-                font-weight: bold;
-            }
-            .filter-options select {
-                width: 100%;
-                padding: 5px;
-                margin-bottom: 10px;
-            }
-            .top-actions {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
             }
         </style>
     </head>
