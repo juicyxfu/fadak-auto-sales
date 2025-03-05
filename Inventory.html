@@ -13,6 +13,9 @@
             margin: 0;
             padding: 0;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
         }
         .top-bar {
             background-color: #12255f;
@@ -60,6 +63,7 @@
             display: flex;
             padding: 20px;
             justify-content: space-between;
+            flex: 1; /* Allow the container to grow and take up remaining space */
         }
         .filter-section, .inventory-list, .add-car-section {
             background: white;
@@ -126,6 +130,20 @@
             width: 100%;
             margin-bottom: 10px;
             padding: 5px;
+        }
+        footer {
+            background-color: #12255f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
     <script>
@@ -203,6 +221,7 @@
             <input type="text" id="car-image" placeholder="Image URL">
             <button class="button" onclick="addCar()">Add Car</button>
         </aside>
+    </div>
     <footer>
         <p>Designed by:</p>
             <ul>
@@ -215,5 +234,3 @@
     </footer>
 </body>
 </html>
-    
-
