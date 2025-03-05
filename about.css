@@ -1,9 +1,4 @@
 /* Set background-color, width, and font-color of header and footer. */
-header, footer {
-	width: 100%;
-	background-color: #0C1445;
-	color: white;
-}
 body {
 	text-decoration: none;
 	font-family: 'Helvetica', 'Arial', sans-serif;
