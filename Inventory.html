@@ -30,7 +30,7 @@
             justify-content: space-between;
             flex: 1; /* Allow the container to grow and take up remaining space */
         }
-        .filter-section, .inventory-list, .add-car-section {
+        .filter-section, .inventory-list {
             background: white;
             padding: 15px;
             border-radius: 10px;
@@ -40,10 +40,7 @@
             width: 20%;
         }
         .inventory-list {
-            width: 55%;
-        }
-        .add-car-section {
-            width: 20%;
+            width: 75%; /* Adjusted to take up more space after removing add-car-section */
         }
         .car-card {
             background: white;
@@ -91,35 +88,7 @@
             justify-content: space-between;
             margin-bottom: 10px;
         }
-        .add-car-section input, .add-car-section select {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 5px;
-        }
     </style>
-    <script>
-        function addCar() {
-            let make = document.getElementById('car-make').value;
-            let model = document.getElementById('car-model').value;
-            let year = document.getElementById('car-year').value;
-            let price = document.getElementById('car-price').value;
-            let mileage = document.getElementById('car-mileage').value;
-            let image = document.getElementById('car-image').value;
-            
-            let inventoryList = document.getElementById('inventory-list');
-            let carCard = document.createElement('div');
-            carCard.classList.add('car-card');
-            carCard.innerHTML = `
-                <img src="${image}" alt="${make} ${model}">
-                <div class="car-info">
-                    <h3>${year} ${make} ${model}</h3>
-                    <p><strong>Price:</strong> $${price}</p>
-                    <p><strong>Mileage:</strong> ${mileage} miles</p>
-                </div>
-            `;
-            inventoryList.appendChild(carCard);
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -162,16 +131,6 @@
                 <button class="button" style="font-size: 12px;">$ Value My Trade</button>
             </div>
         </main>
-        <aside class="add-car-section">
-            <h2>Add a Car</h2>
-            <input type="text" id="car-make" placeholder="Make">
-            <input type="text" id="car-model" placeholder="Model">
-            <input type="number" id="car-year" placeholder="Year">
-            <input type="number" id="car-price" placeholder="Price">
-            <input type="number" id="car-mileage" placeholder="Mileage">
-            <input type="text" id="car-image" placeholder="Image URL">
-            <button class="button" onclick="addCar()">Add Car</button>
-        </aside>
     </div>
     <footer>
         <p>Designed by:</p>
