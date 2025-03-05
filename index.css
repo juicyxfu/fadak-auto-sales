@@ -30,9 +30,10 @@ h2 {
 /* Catchy slogan at the head of website. */
 .slogan {
 	text-align: center;
-	font-style: italic;
+	font-style: none;
+	text-transform: uppercase;
+	font-weight: bold;
 }
-
 
 /* Formats the horizontal line under the slogan. */
 #main-hr {
@@ -45,8 +46,8 @@ button {
 	margin-left: 10px;
 	border-radius: 10px;
 	border-color: #0C1445;
-	padding: 10px;
-	width: 120px;
+	padding: 5px;
+	width: 150px;
 	text-align: center;
 	margin-bottom: 10px;
 	float: right;
@@ -83,19 +84,13 @@ hr {
 	margin: 10px 1% 10px 1%;
 }
 
-@media (min-width:768px) {
-	.row1 > * {
-		width: 50%;
-	}
-}
-
 /* Formats the border styles, background-color, and sizing of the about section. */
 .mini-about {
 	border: white solid;
 	background-color: white;
 	padding-right: 10px;
 	padding-left: 10px;
-	margin: 10px 20px 10px 20px;
+	margin: 0px 20px 0px 20px;
 }
 
 /* Formats the heading of the about section to be centers and uppercase. */
@@ -115,22 +110,22 @@ hr {
 
 /* Sets the sizing, border style, and background-color for the map class. */
 .map {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
 	margin: 0px 20px 0px 20px;
 	background-color: white;
 	border: white solid;
 }
 
+/* Formats the heading to be centered and uppercase. */
+.map h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
 /* Positions the column to relative. */
 .google-map {
 	position: relative;
-}
-
-/* Formats the heading to be centered and uppercase. */
-.google-map h3 {
-	text-align: center;
-	text-transform: uppercase;
 }
 
 /* Formats the location finder to a max height and width within the column. */
@@ -140,6 +135,16 @@ hr {
 	left: 0;
 	top: 0;
 	display: inline-block;
+}
+
+.address {
+	color: black;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
 }
 
 /* Formats the size, background-color, and border type of the contact box. */
