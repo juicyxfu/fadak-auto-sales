@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="palmsimage.css">
     <link rel="stylesheet" type="text/css" href="header-footer-navbar.css">
     <title>Fadak Auto Sales - Inventory</title>
+    
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.5.0/css/pro.min.css">
     <style>
         body {
             background-image: url('palmsbackground.JPG');
@@ -49,16 +51,41 @@
             border-radius: 10px;
             display: flex;
             align-items: center;
+            flex-direction: column;
             border: 1px solid #ddd;
+            width: 30%;
+            
+            flex: 1 1 calc(30% - 20px); /* Ensures 3 per row with spacing */
+            max-width: calc(30% - 20px);
         }
         .car-card img {
-            width: 150px;
-            height: auto;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
             border-radius: 10px;
             margin-right: 15px;
         }
-        .car-info {
-            flex: 1;
+        .car-top {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            width: 90%;
+        }
+        .car-header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .car-header h3, .car-header h4{
+            display: block;
+        }
+        .car-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-self: flex-start;
+            gap: 2rem;
         }
         .button {
             background-color: #12255f;
@@ -88,6 +115,12 @@
             justify-content: space-between;
             margin-bottom: 10px;
         }
+        .car-listing {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Adjusts spacing */
+            gap: 20px; /* Spacing between cards */
+        }
     </style>
 </head>
 <body>
@@ -110,13 +143,9 @@
         <aside class="filter-section">
             <h2>Filter Inventory</h2>
             <div class="filter-options">
-                <label>Stock Number</label>
-                <select>
-                    <option>All</option>
-                </select>
-                
+
                 <label>Body Style</label>
-                <select>
+                <select name="body-style">
                     <option>All</option>
                     <option>Sedan</option>
                     <option>SUV</option>
@@ -125,25 +154,21 @@
                 </select>
                 
                 <label>Make</label>
-                <select>
+                <select name="make">
                     <option>All</option>
-                    <option>Toyota</option>
+                    <option>Audi</option>
+                    <option>BMW</option>
+                    <option>Chevrolet</option>
                     <option>Honda</option>
                     <option>Ford</option>
-                    <option>Chevrolet</option>
-                </select>
-                
-                <label>Model</label>
-                <select>
-                    <option>All</option>
-                    <option>Camry</option>
-                    <option>Accord</option>
-                    <option>F-150</option>
-                    <option>Silverado</option>
+                    <option>Ram</option>
+                    <option>Nissan</option>
+                    <option>Toyota</option>
+                    <option>Volkswagen</option>
                 </select>
                 
                 <label>Max Price</label>
-                <select>
+                <select name="max-price">
                     <option>Any</option>
                     <option>$10,000</option>
                     <option>$20,000</option>
@@ -152,7 +177,7 @@
                 </select>
                 
                 <label>Max Mileage</label>
-                <select>
+                <select name="max-mileage">
                     <option>Any</option>
                     <option>10,000 miles</option>
                     <option>50,000 miles</option>
@@ -161,16 +186,443 @@
                 </select>
                 
                 <label>Available/Sold</label>
-                <select>
+                <select name="status">
                     <option>All Statuses</option>
                     <option>Available</option>
                     <option>Sold</option>
                 </select>
+                
             </div>
         </aside>
         <main class="inventory-list" id="inventory-list">
-            <div class="top-actions">
-                <button class="button" style="font-size: 12px;">$ Value My Trade</button>
+
+            <div class="inventory-cars">
+                <div class="car-listing">
+
+                    <div class="car-card" data-body-style="Sedan" data-make="BMW" data-model="3 Series" data-price="38000" data-mileage="20000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg?crop=0.827xw:0.761xh;0,0.239xh&resize=2048:*" /></div>
+                            <div class="car-header">
+                                <h3>2020 BMW 3 Series</h3>
+                                <h4>38,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Sedan</p>
+                                <p><i class="fa-solid fa-industry"></i>  BMW</p>
+                                <p><i class="fa-solid fa-car-side"></i>  3 Series</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  20,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Blue</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I4</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 25 CITY / 34 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>98765</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  13</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="car-card" data-body-style="Sedan" data-make="Toyota" data-model="Camry" data-price="20000" data-mileage="50000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image">
+                                <img src="https://www.autoblog.com/.image/t_share/MjA5MTIyMTY4OTA0Njg5MjY0/2021-toyota-camry-xle.jpg" />
+                            </div>
+                            <div class="car-header">
+                                <div>
+                                    <h3>2021 Toyota Camry</h3>
+                                </div>
+                                <div>
+                                    <h4>18,000$</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Sedan</p>
+                                <p><i class="fa-solid fa-industry"></i>  Toyota</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Camry</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  20,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Black</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  4-cylinders V-shaped</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 23 CITY / 25 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>50392</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="SUV" data-make="Honda" data-model="CR-V" data-price="25000" data-mileage="30000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://di-uploads-pod36.dealerinspire.com/patriothonda/uploads/2021/12/2022-Honda-CR-V.jpg" /></div>
+                            <div class="car-header">
+                                <div><h3>2022 Honda CR-V</h3></div>
+                                <div><h4>25,000$</h4></div>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  SUV</p>
+                                <p><i class="fa-solid fa-industry"></i>  Honda</p>
+                                <p><i class="fa-solid fa-car-side"></i>  CR-V</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  30,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Grey</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  4-cylinders Inline</p>
+                                <p><i class="fa-solid fa-gears"></i>  CVT</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 27 CITY / 32 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>80921</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="SUV" data-make="Ford" data-model="Explorer" data-price="25000" data-mileage="40000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://media.ed.edmunds-media.com/ford/explorer/2020/oem/2020_ford_explorer_4dr-suv_limited-hybrid_fq_oem_1_1600.jpg" /></div>
+                            <div class="car-header">
+                                <div>
+                                    <h3>2020 Ford Explorer</h3>
+                                </div>
+                                <div>
+                                    <h4>22,500$</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  SUV</p>
+                                <p><i class="fa-solid fa-industry"></i>  Ford</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Explorer</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  40,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Blue</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  V6</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 20 CITY / 27 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>67890</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="Sedan" data-make="Ford" data-model="Fusion" data-price="18000" data-mileage="45000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://hips.hearstapps.com/hmg-prod/images/2020-ford-fusion-mmp-1-1568742907.jpeg?crop=0.643xw:0.541xh;0.316xw,0.429xh&resize=2048:*" /></div>
+                            <div class="car-header">
+                                <h3>2020 Ford Fusion</h3>
+                                <h4>18,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Sedan</p>
+                                <p><i class="fa-solid fa-industry"></i>  Ford</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Fusion</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  45,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Black</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  4-cylinders Turbo</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 21 CITY / 31 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>13579</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="Truck" data-make="Chevrolet" data-model="Silverado" data-price="35000" data-mileage="25000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://di-uploads-pod25.dealerinspire.com/rickhendrickchevynorfolk/uploads/2021/04/2021-chevy-silverado-1500.jpeg" /></div>
+                            <div class="car-header">
+                                <h3>2021 Chevrolet Silverado</h3>
+                                <h4>35,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Truck</p>
+                                <p><i class="fa-solid fa-industry"></i>  Chevrolet</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Silverado</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  25,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Black</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  V8</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 16 CITY / 21 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>24680</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  4</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="SUV" data-make="Honda" data-model="Accord" data-price="45000" data-mileage="30000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://di-uploads-pod16.dealerinspire.com/andersonautomotivegroup/uploads/2024/09/2024-honda-accord-in-urban-gray-pearl-shown-in-sport-hybrid-trim-level-1.png" /></div>
+                            <div class="car-header">
+                                <h3>2024 Honda Accord</h3>
+                                <h4>25,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Sedan</p>
+                                <p><i class="fa-solid fa-industry"></i>  Honda</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Accord</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  50,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Grey</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  V6</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 20 CITY / 28 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>13579</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card" data-body-style="Sedan" data-make="Toyota" data-model="Camry" data-price="24000" data-mileage="15000" data-status="Sold">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://vehicle-images.dealerinspire.com/0c7e-110007412/4T1KZ1AK2NU066145/eb5d96ae2c46f90747cda816680f0a65.jpg" /></div>
+                            <div class="car-header">
+                                <h3>2022 Toyota Camry</h3>
+                                <h4>24,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Sedan</p>
+                                <p><i class="fa-solid fa-industry"></i>  Toyota</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Camry</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  15,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  White</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Sold</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I4</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 28 CITY / 38 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>24680</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  5</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card" data-body-style="Convertible" data-make="BMW" data-model="Z4" data-price="55000" data-mileage="12000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://consumerguide.com/wp-content/uploads/2014/01/p90318610_highres.jpg" /></div>
+                            <div class="car-header">
+                                <h3>2021 BMW Z4</h3>
+                                <h4>55,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Convertible</p>
+                                <p><i class="fa-solid fa-industry"></i>  BMW</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Z4</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  12,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Black</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I6</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 22 CITY / 30 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>11223</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="Coupe" data-make="Honda" data-model="Civic" data-price="22000" data-mileage="18000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://i.gaw.to/content/photos/48/21/482171-honda-civic-2022-retour-au-sommet.jpeg" /></div>
+                            <div class="car-header">
+                                <h3>2022 Honda Civic</h3>
+                                <h4>22,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Coupe</p>
+                                <p><i class="fa-solid fa-industry"></i>  Honda</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Civic</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  18,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Black</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I4</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 30 CITY / 40 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>13579</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  6</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card" data-body-style="Hatchback" data-make="Volkswagen" data-model="Golf" data-price="19000" data-mileage="12000" data-status="Sold">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://images.hgmsites.net/hug/2021-volkswagen-golf-gti-clubsport_100765104_h.jpg" /></div>
+                            <div class="car-header">
+                                <h3>2021 Volkswagen Golf</h3>
+                                <h4>19,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Hatchback</p>
+                                <p><i class="fa-solid fa-industry"></i>  Volkswagen</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Golf</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  12,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Silver</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Sold</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I4</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 28 CITY / 36 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>24680</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  8</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card" data-body-style="Minivan" data-make="Chrysler" data-model="Pacifica" data-price="38000" data-mileage="22000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/vdat/submodels/chrysler_pacifica_chrysler-pacifica_2020-1636564884153.jpg?fill=18:11&resize=640:*" /></div>
+                            <div class="car-header">
+                                <h3>2020 Chrysler Pacifica</h3>
+                                <h4>38,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Minivan</p>
+                                <p><i class="fa-solid fa-industry"></i>  Chrysler</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Pacifica</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  22,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Grey</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  V6</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 19 CITY / 28 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>35791</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  9</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card" data-body-style="Convertible" data-make="Audi" data-model="A5" data-price="42000" data-mileage="15000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://hips.hearstapps.com/hmg-prod/images/2021-audi-a5-sportback-mmp-1-1589233966.jpg?crop=0.813xw:0.760xh;0.143xw,0.125xh&resize=1200:*" /></div>
+                            <div class="car-header">
+                                <h3>2021 Audi A5</h3>
+                                <h4>42,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Convertible</p>
+                                <p><i class="fa-solid fa-industry"></i>  Audi</p>
+                                <p><i class="fa-solid fa-car-side"></i>  A5</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  15,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  White</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I4</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 24 CITY / 33 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>24680</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  10</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card" data-body-style="Truck" data-make="Ram" data-model="1500" data-price="50000" data-mileage="30000" data-status="Sold">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://cdn.motor1.com/images/mgl/8wmme/s1/2020-ram-1500-limited-ecodiesel-review.jpg" /> </div>
+                            <div class="car-header">
+                                <h3>2020 Ram 1500</h3>
+                                <h4>50,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  Truck</p>
+                                <p><i class="fa-solid fa-industry"></i>  Ram</p>
+                                <p><i class="fa-solid fa-car-side"></i>  1500</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  30,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Black</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Sold</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  V8</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 15 CITY / 22 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>13579</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  11</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card" data-body-style="SUV" data-make="Nissan" data-model="Rogue" data-price="27000" data-mileage="22000" data-status="Available">
+                        <div class="car-top">
+                            <div class="car-image"><img src="https://www.cnet.com/a/img/resize/88b1a863850538c75cf1438acfb86815d5d2efeb/hub/2020/10/01/689e95f6-8397-4a56-a160-0adf59c47fdd/2021-nissan-rogue-008.jpg?auto=webp&fit=crop&height=675&width=1200" /></div>
+                            <div class="car-header">
+                                <h3>2021 Nissan Rogue</h3>
+                                <h4>27,000$</h4>
+                            </div>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-car"></i>  SUV</p>
+                                <p><i class="fa-solid fa-industry"></i>  Nissan</p>
+                                <p><i class="fa-solid fa-car-side"></i>  Rogue</p>
+                                <p><i class="fa-solid fa-tachometer-alt"></i>  22,000 miles</p>
+                                <p><i class="fa-solid fa-palette"></i>  Silver</p>
+                                <p><i class="fa-solid fa-check-circle"></i>  Available</p>
+                            </div>
+                            <div class="car-info">
+                                <p><i class="fa-solid fa-engine"></i>  I4</p>
+                                <p><i class="fa-solid fa-gears"></i>  Automatic</p>
+                                <p><i class="fa-solid fa-gas-pump"></i> 26 CITY / 33 HWY</p>
+                                <p><i class="fa-solid fa-barcode"></i>11223</p>
+                                <p><i class="fa-solid fa-file-contract"></i>  Clean</p>
+                                <p><i class="fa-solid fa-list-ol"></i>  12</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </main>
     </div>
@@ -184,5 +636,46 @@
             </ul>
         <p>&copy;2025 Fadak Auto Sales.</p>
     </footer>
+    
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterOptions = document.querySelectorAll(".filter-options select");
+        const carCards = document.querySelectorAll(".car-card");
+
+        function filterCars() {
+            carCards.forEach(card => {
+                let bodyStyle = card.getAttribute("data-body-style").toLowerCase();
+                let make = card.getAttribute("data-make").toLowerCase();
+                let model = card.getAttribute("data-model").toLowerCase();
+                let price = parseInt(card.getAttribute("data-price"), 10);
+                let mileage = parseInt(card.getAttribute("data-mileage"), 10);
+                let status = card.getAttribute("data-status").toLowerCase();
+
+                // Get selected filter values
+                let selectedBodyStyle = document.querySelector("select[name='body-style']").value.toLowerCase();
+                let selectedMake = document.querySelector("select[name='make']").value.toLowerCase();
+                let selectedPrice = document.querySelector("select[name='max-price']").value.replace(/[^0-9]/g, "");
+                let selectedMileage = document.querySelector("select[name='max-mileage']").value.replace(/[^0-9]/g, "");
+                let selectedStatus = document.querySelector("select[name='status']").value.toLowerCase();
+
+                // Filtering logic
+                let isVisible =
+                    (selectedBodyStyle === "all" || bodyStyle === selectedBodyStyle) &&
+                    (selectedMake === "all" || make === selectedMake) &&
+                    (selectedPrice === "" || price <= parseInt(selectedPrice, 10)) &&
+                    (selectedMileage === "" || mileage <= parseInt(selectedMileage, 10)) &&
+                    (selectedStatus === "all statuses" || status === selectedStatus);
+
+                card.style.display = isVisible ? "flex" : "none";
+            });
+        }
+
+        // Attach event listeners to all filter dropdowns
+        filterOptions.forEach(select => {
+            select.addEventListener("change", filterCars);
+        });
+    });
+
+</script>
 </html>
