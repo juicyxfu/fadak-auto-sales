@@ -166,6 +166,21 @@ hr {
 	text-align: center;
 }
 
+.slide-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+.slide {
+	display: none;
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 2.0s;
+}
+
 /* Creates a flex container with 2-columns that sit side by side. */
 .row2 {
 	display: flex;
